@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title></title>
+</head>
+
+<body>
+    <script>
+        /*EXERCICIO 4*/
+        function validar() {
+
+            var name = document.ex4.nome.value;
+            name = String(name);
+            var passw = document.ex4.senha.value;
+            passw = String(passw)
+
+            if (document.ex4.nome.value === "") {
+                window.alert("Preenchimento do campo Login obrigatório");
+                document.ex4.nome.focus();
+                return false
+            }
+            if (document.ex4.senha.value === "") {
+                window.alert("Preenchimento do campo Senha obrigatório");
+                document.ex4.senha.focus();
+                return false
+            }
+            if (passw.length < 6) {
+                window.alert("A senha deve conter mais de 6 caracteres! Crie uma nova senha.");
+                document.ex4.senha.focus();
+                return false
+            }
+            if (name.length < 4) {
+                window.alert("O login deve conter mais de 4 caracteres! Crie um novo login.");
+                document.ex4.nome.focus();
+                return false
+            }
+        }
+        function enviar() {
+            if (validar() === false) {
+                window.alert("ERRO! Preencha o formulário novamente!");
+                return false
+            } else {
+                window.alert("Dados enviados com sucesso!");
+                return true
+            }
+        function mostrar(passw) {
+            let senha = alert('Sua senha é ' + document.ex04.senha)
+        }
+        }
+    </script>
+
+    <form name="ex4">
+        Login: <input type="text" name="nome" placeholder="digite o login com mais de 4 caracteres">
+        <br>
+        Senha: <input type="password" name="senha" placeholder="digite uma senha com mais de 6 caracteres">
+        <br>
+        <input type="submit" name="Enviar" onclick="validar();">
+        <button onclick="mostrar()">Mostrar senha</button>
+    </form>
+</body>
+
+</html>

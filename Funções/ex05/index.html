@@ -1,0 +1,24 @@
+<html>
+<head>
+<title>Meu script</title>
+<script language="javascript" type="text/javascript">
+	
+	function aviso(){
+		if("" == document.meuform.nome.value){
+			alert("preenchimento obrigatorio");
+			meuform.nome.focus();
+			return false;
+		}
+		else{
+			alert("Nome enviado com sucesso!!!")
+			return true;}
+	}
+    
+</script>
+</head>
+<body>
+	<form name="meuform" method="POST" onsubmit="return aviso()">
+		Nome: <input type="text" name="nome" autofocus> 
+		<input type="submit" name="entrar" value="entrar">
+</body>
+</html>
